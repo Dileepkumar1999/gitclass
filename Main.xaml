@@ -1,0 +1,668 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="extractdatatable" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>784,7013.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="43">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="A -&gt; Launch &quot;https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclublogin.html&quot;&#xA; B -&gt; Read the email based on subject: &quot;Ryan Login Details&quot; fetch the username &amp; password from email body store it in Orchestrator&#xA; -&gt; Store the login details in orchestrator Assest in the name &quot;RyanLoginDetails&quot;&#xA;  -&gt; notthecyberteam@gmail.com&#xA;  -&gt; letme!n&#xA; -&gt; Click on Section &quot;Credit Card Dump 349473&quot;&#xA; -&gt; Extract all the details from Webpage A post login success&#xA; -&gt; From the Extracted information filter based below conditions&#xA;  * Level = CLASSIC or PLATINUM&#xA;  * Brand = AMERICAN EXPRESS or VISA&#xA;  * Card Type = DEBIT&#xA; -&gt; Write the filtered datatable into Excel file with below format&#xA;  CustomerID ,FirstName,LastName,CardNumber,CVV,CardBrand&#xA; -&gt; Share the same via Email in below format:&#xA;  to: Me,Ganesh &amp; Murali&#xA;  Subject: Credit Card Details&#xA;  Body: &quot;provide ellobrative details&quot;" sap:VirtualizedContainerService.HintSize="627.2,6948.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Use Browser Chrome: Ryan's Club - Login" sap:VirtualizedContainerService.HintSize="585.6,6540" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,6323.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="username" />
+              <Variable x:TypeArguments="ss:SecureString" Name="password" />
+              <Variable x:TypeArguments="sd:DataTable" Name="extractdatatable" />
+              <Variable x:TypeArguments="sd:DataTable" Name="filtereddt" />
+              <Variable x:TypeArguments="sd:DataTable" Name="test" />
+              <Variable x:TypeArguments="x:Int32" Name="CardNumber">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" Value="2" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="CardTarget" />
+              <Variable x:TypeArguments="x:Int32" Name="Valid" />
+              <Variable x:TypeArguments="x:String" Name="Expiration" />
+              <Variable x:TypeArguments="x:Int32" Name="Level" />
+              <Variable x:TypeArguments="x:String" Name="CardType" />
+              <Variable x:TypeArguments="x:Int32" Name="Brand">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" Value="2" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="Branding" />
+              <Variable x:TypeArguments="x:Int32" Name="Debit">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" Value="2" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="Cards" />
+              <Variable x:TypeArguments="x:Int32" Name="LastName" />
+              <Variable x:TypeArguments="x:String" Name="Name" />
+              <Variable x:TypeArguments="x:Int32" Name="State" />
+              <Variable x:TypeArguments="x:String" Name="City" />
+              <Variable x:TypeArguments="x:Int32" Name="Zip">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" Value="2" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="Pincode" />
+              <Variable x:TypeArguments="x:Int32" Name="Country" />
+              <Variable x:TypeArguments="x:String" Name="CountryText" />
+              <Variable x:TypeArguments="x:Int32" Name="Price">
+                <Variable.Default>
+                  <Literal x:TypeArguments="x:Int32" Value="2" />
+                </Variable.Default>
+              </Variable>
+              <Variable x:TypeArguments="x:String" Name="Cost" />
+              <Variable x:TypeArguments="x:Int32" Name="Buy" />
+              <Variable x:TypeArguments="x:String" Name="Buyer" />
+              <Variable x:TypeArguments="sd:DataTable" Name="ExtractedData" />
+              <Variable x:TypeArguments="x:String" Name="Output" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="Ryan Login Details" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="510.4,183.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[username]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'INPUT email'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="510.4,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Text="[username]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclublogin.html" DesignTimeRectangle="928, 458, 408, 56" ElementType="InputBox" FriendlyName="'INPUT email'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='email' class='form-control' aaname='Email' /&gt;" Guid="3316ee22-16e9-4f87-b2c8-c94d2938a919" ImageBase64="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" InformativeScreenshot="4ff182bcfd450d310c34eb96074d73e9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Login' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'INPUT password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="510.4,243.2" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" SecureText="[password]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclublogin.html" DesignTimeRectangle="928, 539, 408, 56" ElementType="InputBoxPassword" FriendlyName="'INPUT password'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='password' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='password' class='form-control' aaname='Password' /&gt;" Guid="59e25226-d772-4372-bd6a-ed834b28e08e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZwAAAA8CAYAAABSKgxjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAO4SURBVHhe7d3fS5tXHMDh/f93hV6Ull6FtZs1OKWCoKu1br0ISnD+SrVtUFenLc4faaQV9bscTWJcVZymhzieBw54Ej3ve3U+nPe98IcAgAwEB4AsvgnOzl49qmubsbC8FvNLq4ZhGIZx7ZHakRqSWvJv54Kz8Wk73q9uxF5tP46Pj5ufAsD1pHakhqSWpKZ0agcn1Sj9gtAAcFupJakpnSeddnDSEShVCQC6ITUltaWlHZz03M3pBoBuSU1JbWlpBye97AGAbupsi+AA8N0IDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWfR+cI72o/754v8+eljfivpBc3LOYXz5vBNfjprTTlesFwe12K1/bU7Ou/Ra3V7vpvcO0ON6Pzh7pSg8nYyPzWmnt2NPorjYnJyzFa+f9cf4RX90xXrxbjTuD882J+ddeq1ur3fTewfocb0bnKNqjA+NRulDKYpDpaiWR6Pwa+Xkq/ofo9H3aiHmXg3H2OJCjA0Mx+vt9M1hrP02HIPllSg9b3y2OhWDz15EJZ0Wrlgv6uUYHJqIuTcTUXw521h3KIpTW6dfXXatbq9303sHuCN6+oRzuFuN6ZH+uPfw5yhOV2Pr6+HpF0f7sf5uIp48LsT9vhcx91etsV03HWxFtbGpP3pYiAfPG5vz9tkjqEvXS4+xNiuNzb8Q9x4PxMiblbPHXVdcq9vr3ezeAe6Gng5O/D0VfU9HYmZpIh79NBnr7fcatai+HIjC78tR+qWxAS/Wmp83HH2M6aH+KM43Tg8/9sf4ZsfGfOl6jZPHykQU+ibjbXkoHgzPRr35+ZXX6vZ6N7x3gLugt084H8oxc7LpHsb6/FRUW7v20U5U5iqnm3i9EqX5jrcaBysxM//n6c+bs1FaOdvQL12vMd9dKkflZF6LSnk2tlob+hXX6vZ6N7t3gLuht084APxvCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFkIDgBZCA4AWQgOAFlcGJyF5bU4Pj5uzgDgdlJTUlta2sGprm3GXm2/OQOA20lNSW1paQdnZ68e71c3nHIAuLXUktSU1JaWdnCSjU/bJ7+QqiQ8APxXqR2pIaklqSmdzgUnSTVKR6D03C297DEMwzCM647UjtSQzpNNyzfBAYDvQXAAyCDiH9QDzRJmmeaJAAAAAElFTkSuQmCC" InformativeScreenshot="0de0ab736df28c849a77db096b237cd2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Login' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Login'" sap:VirtualizedContainerService.HintSize="510.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclublogin.html" DesignTimeRectangle="928, 625, 408, 59" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='button' class='btn btn-block login-btn mb-4' aaname='Login' check:text='Login' /&gt;" Guid="05ef6ee5-7626-4beb-90e4-7b834bcd847a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZwAAAA/CAYAAADUvn7NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAU/SURBVHhe7d2xSyNpHMZxu/wdgfwDAZtrAitsE7CxO8FCLIPFMliJzRG2CldIuELCFcI0B7EQ3GJhbIQ0B7EQYnEQiyumsEhhMYXF7+adzG/yZjKuiXevh5PvAx9Y531nkmLNw2TeGTeEEEIIeYdQOIQQQt4lC4Xj+740Gg2pVCqysbEBAMDSTHeYDjFdks9c4XieV3gAAABWZTrFTlY4po2KdgAA4K3sM52scMwpUNFkAADeynSLJiscrtkAAP5rpls0WeEUTQQA4N/SUDgAAKc0FA4AwCkNhQMAcEpD4QAAnNJQOAAApzQUDgDAKQ2FAwBwSkPhAACc0lA4AACnNBQOAMApDYUDAHBKQ+EAAJzSUDgAAKc0FA4AwCkNhQMAcEpD4QAubTaluVmwHVgjGgoHcGTrbCRR8tsVyfDXauEcYB1oKByUSutyLNFTFBtKt2D8PXVu01+uOJPvrcI5wDrQUDgoFe96kv6PHkmvYNyZ2q60LwYy+taRn9Jt1aO+jB7j8nuMy287Nx9YIxoKB6Xy/xSOJ8Fj+rL3vYJxYL1pKByUysqFs3kg7fNAhncjGd0NJThvy8GPLvKb+WdXMtD5f3Sl9dtw+pLP8dnMn93Z3P22+Od+rCveZ+sYsa2j7nTs60Hyc/2wK1c35pgjGVy88h6AD0ZD4aBUVimc5ulQJs/pdDvPExmeNhfm108CCYvmmzwNpF2bn7/x+ygdnEjwZX4se5+PgfQuw3RxgZUofv98DYeS0FA4KJWlC+dLENfALJMHc3YxtgooVxKfezLSsceBdA93ZXfvWPp/aVWEcrVvzTeWKRxNXHLhvf36cefcdqRq7QN8VBoKB6WyXOFUpZutIIvL4Mhasrzdl3E6Yq7HZB/4dnkcpduMmp/NX1iJtmzhxGc5np4d1TwJdOh5KB1rH+Cj0lA4KJXlCqctg6d02kNftnLj2XJm+wP/pfKwC+fam23/0T6x2fuMZPDLS2Ovfy0IfAQaCgelstyHdS8enWahJGKFx9i/kjDdGt37spuckdTl2C6Ok9kxEksVzlj83LUfCgdlo6FwUCrOCmejKq1LrZzFhN+9xestSxXO4vukcFA2GgoHpbLch3Vrdt9MeCUHc2NN6f+djk0C8dLtzbg8kuUBUThdXJA8zWAi4V0gvcO6tb+FwgESGgoHpTL7sB5Lf8+sJMvZnpbD8Y2uLotkfNGSerJ/XVoX42yJcnRznB53VlDj8xfKpQiFAyQ0FA5KZfZh/UL0SQC1jgztm1/y99eY+2CymzWr0rlNJydnONMbNGfMDaA9ae/nyojCARIaCgelsnThGNsdCR7s1pkmegikk7vpsrrdk9Hi1IWE36xrQhQOkNBQOFh71U872VduO58W/4xA9esgrgyTSMIbX9rJTZ+Ww64M9JqQeeJAbn9g3WkoHOAVvbv0l8RaRDDPupGUwgEWaCgc4BWzv2szkeAkv2igLgdnw/QMyF5oAEBpKBzgNfnrN5F57tlIRg8TieztofWIGgAZDYUDLKH6c/ECgyTPkYyvO+nTBwDkaSgcYBW1LdnZa0n7zBf/9Fh295rpPTwAXqKhcAAATmkoHACAUxoKBwDglIbCAQA4paFwAABOaSgcAIBTGgoHAOCUhsIBADiloXAAAE5pKBwAgFMaCgcA4JQm+1elUimcCADAW5lu0WSF02g0CicDAPBWpls0WeH4vl84GQCAtzLdopl9uRbH87zCHQAAWJXpFDtzhWNi2sicAnFNBwCwKtMdpkPsMxvNQuEQQgghLkLhEEIIeYeI/AP71WJ7JuILnwAAAABJRU5ErkJggg==" InformativeScreenshot="8d229c0bb99f11fca28a9e8ca4e27b14.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Login' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click 'View'" sap:VirtualizedContainerService.HintSize="510.4,157.6" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_home.html" DesignTimeRectangle="357, 837, 59, 39" ElementType="Text" FriendlyName="'View'" FullSelectorArgument="&lt;webctrl aria-role='button' parentid='layoutSidenav_content' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' parentid='layoutSidenav_content' tag='A' type='' class='btn btn-sm btn-outline-secondary' aaname='View' check:innerText='View' /&gt;" Guid="8e63b549-5f2a-42a4-93e2-57f34b60a9fd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAArCAYAAADPGFBSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIQSURBVGhD7ZrBagIxEIb7wF566KXQS9mbN4/1UlioryB4kR4KvQniA5RSRF+g3qb5s5OYnSTuWgO1m3yw1M1OsvtNJlGpN5QxRd7w8flFT88vdHv/SKO7h8Ec8IEX/FysPC4g6PXtnb4PB24dBvCBF/zcBFh5ZAYBQwZ+8DRYeWRlaDMugR88DVYeayMHXM8iD4p8BhR5psiDIp8BRZ75hfye5mP1hWG8pC23+GxoqsYb1Rv7ulrsm0t/zMUzv11MVPyE5jtukKxnerzpGicDk6fdkqoTQqsaXyVntOLza+Jy+ZOl75b89ZFAXqFLO1D6Xnuk7Ll6cF99OInUlSMTG6k2HXtGotPIR6T8Bw/EtfYEICoplFjuExr7OE43ieR7inptLCpni2c2tkniXlU9UzHOXqITct7ekkzem6HQjEkRLRlYLiKuXc64hj5NjJlp/a4jl0cH6eRDD+w9jJA35Rs52nE8q3jN4x6T0lSQje8J7mG4UN4VFpIW0R6deYGzDHTJu0nB/fqOI0gqb0t9wX87ytk/j2FmdqninXGNNO53ZsmDtPIsg/7htxxftvmEKHdpJVu3ZZo1PaGqJclJQXtnAn0Sy3PpezKGyEwH1r7Xn0tf9g0nrx/oZ0gi/58o8kyRB0U+A4o8U+RB1vJZ/4s66x8nZP2zFIALyAyCsDaGcsAHXq44aMnnRpHPE6IfUVwvw4jvU3cAAAAASUVORK5CYII=" InformativeScreenshot="24b8baaba5fff8af0d2163eed4c66b4b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector, Image" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="357, 727, 447, 90" ElementType="Text" FriendlyName="'Major US'" FullSelectorArgument="&lt;webctrl tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' type='' class='card-text' aaname='Major US retailer dump - inlcudes classic, gold, and                                             platinum cards with CCV and city/state details as well as Debit Cards with                                             unvalidated balances.' check:innerText='Major US retailer dump - inlcudes classic, gold, and platinum cards with CCV and city/state details' /&gt;" ImageBase64="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" SearchSteps="Selector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="510.4,413.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[CardNumber]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Valid]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Level]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Brand]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Debit]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[LastName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[State]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Zip]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Country]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Price]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:Int32">[Buy]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:Int32">2</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <ui:BuildDataTable DataTable="[ExtractedData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="510.4,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;CardNumber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Expiration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:anyType&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Level&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Brand&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Card_x0020_Type&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Last_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;City_x002F_State&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Zip&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Country&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Buy&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName /&gt;&#xA;&lt;/NewDataSet&gt;" />
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="510.4,3075.2" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="472,2908" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGetText DisplayName="Get Text 'Card Number'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="342, 516, 169, 61" ElementType="Text" FriendlyName="'427968**********'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='{0}' tag='TD' /&gt;&quot;, CardNumber)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="4281b358-2e19-4430-9d0d-64b62543e487" ImageBase64="" InformativeScreenshot="2c94169705f8715b2b7b7eb405ecf3c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="342, 468, 169, 48" FriendlyName="'Card Number'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname='' check:innerText='Card Number' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAK0AAAA0CAYAAAD4xrjIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAM7SURBVHhe7ZpNbtswEIV7lS66yLEML3ISL+KbGPBRFPgGXXThAMkhVNIiqTfU6CcmVXnc9wFvQ5EizflEKUV/tIQYg9IScyRpf/+5MoyJCGkJeVSisB5KS0xAaYk5KC0xB6Ul5qC0xByUlpiD0hJzUFpiDkpLzEFpiTkoLTEHpSXmoLTEHJSWmIPSklW5Xq+31ORJpP1qT/uX9ucvn2P7Hlrt8Sy/o8PL2jTNLTXFrS7t5/k1bLrMoQkdVmF5sd/fYF37c/sZ2nsu7WHy+po8j7QobG1x60n7cW53sdhKHlJadV2UthRN2Jga4taRNhN2d/4KFzr86fuo0g77U9oSpoSNKRW3grS40WufqGOUSOvydglXPZT20SmXFk/ZBUVWpREFygrXHId9UluX3flyh7TH9gTf3/3DNpQWv9PxoRy259LBvXzCwyG/+1/b08et2TEzXt3frI+LODhgr3Cf8rehJcqlRYHEiaWBRckTZRvr010f+0Ovz3JphRRJiFrS6tntlfWnuefHC3GzhxeTpBzp819Li4W7ayNgU9XCj7268YQShVkqbRgPY7v115M27gf269eNfbU23E/Z3s0F64Q96ucK+yD2Bk91u2wkbSamGK8VMzAQLIJjvintoK2WtLAO/IRSBdOkzX5H/tuFjFrCPbHf7JvQBsXSik3BV5cKnpTDDKWdKVyiTFp5ah03kHZmvOfb0oZ7ju6ZXcqlzUTEouZgkdIGQkG3k9ahSTAjbX+v9aUd9F0qI6XVwQ31ycX1131bX+S+IDh2Vlos/sg9BmMyRqUV84bENwcKnaTTHtaa0qJkOFdct9YWcPMd4th/LK2Rf6ftwFNHiy9KLneeWWkdc/PcL61DPBQu6XNHCqplDWm1oHhT+5n6bXDSTolbKqynmrQdY8XtCyik81JAQZdI68mLdWjmx0QmpXWIeydpHZnQfq3T0pVK68bjCe+iSpc/aLfA3Bt9Hmji1hDWU1laQnpQ3FrCeigtWRUva01hPZSWmIPSEnNQWmIOSkvMQWmJOSgtMQelJeagtMQclJaYg9ISc1BaYg5KS8xBaYk5KC0xB6Ul5lCllf8LnmEeN5SWMZaX9i+BGEKtHRY9LwAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[CardTarget]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Expiration'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="512, 364, 140, 61" ElementType="Text" FriendlyName="'10/28'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='2' tableRow='{0}' tag='TD' isleaf='1' /&gt;&quot;, Valid)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='TD' isleaf='1' /&gt;" Guid="43d0707f-8362-449d-8ce6-8a67f7bfdeb0" ImageBase64="" InformativeScreenshot="34d9fce97fcb36eadaddb287351b3479.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="523, 326, 119, 26" ElementType="Text" FriendlyName="'Expiration'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Expiration' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Expiration' type='' tag='A' class='dataTable-sorter' check:innerText='Expiration' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHsAAAAeCAYAAAAM/mGWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJPSURBVGhD7ZdBkoIwEEXnKi5czLEsF57EhZ5hFrO1iqNAeQut0kNkaAjwO3SAMCBQ6VfVmxhi7Nfp4JdRokFlR4TKjgiVHREqOyJUdkSo7IhQ2Rvl8XgUEcLysp+JOey/zS6Pc2rHZuVtbsfy+3aXux3bFiQ5TdMiQoQz2dnFJkGIQ/K2s6bllZya7/lE8qG4dvuryezwVkDRocIXlz3vyb6bM63Nimi7J1sSXcUQ4R7ZJ3N72sGtgid4o+0a6RJdRZ9wlR0RQbJZm8cEpldn3LZPimNiXuyerOZY4Nn6qmBj97rtlp/D2hiwpvc6kvZWPlLi7lOa4+yXvXPk8ZmXzHEMvrPLHwH3XV0QUvI8QjAqOT2yMYrPJSFV2DXHyHal8YDi9+ytifW+9AXKznHaY5Mk7AZcdi2Rjdv5vbLlLoM0+4ZEe9u4IJsVkGeNai7bWzUXD8F6T/eoO1s6BY1QQj49BD5bJKVPNhMFiCcc9h0gu7UnoJUTab+Eb3xFjHxB45Xcbl3TyW4lDguhFSq7i8lOdm+rtAxKnjdx0jsD7kdldxEu20li8wwmChKK46z12m4QJBvWrQXKBcC+ixWcUIi+udL4QrJn/J8tRPFjMbFWlpgoLluKugCCZLvXhxtYpMIeigIRZOeI3aoOWHch2USX8D7RRIDsX/MDicYfxJ4TEpo5iWStMkg2wSXS52IbJ1gnyaNDdoE7X5qzoGxCEj5ENMFkT0dHQpV/g8KHiiZU9kYhySGiCZUdESo7ImaSrawRlR0RKjsiVHY0GPMHNzWsvkjUuA0AAAAASUVORK5CYII=" SearchSteps="Selector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[Expiration]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Level'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="652, 364, 116, 61" ElementType="Text" FriendlyName="'GOLD'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='3' tableRow='{0}' tag='TD' /&gt;&quot;, Level)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='TD' /&gt;" Guid="f3d24c5d-1316-4519-ac40-e327878f59ab" ImageBase64="" InformativeScreenshot="2bbc3d32b4673bb48a9686a1eab5b669.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="663, 326, 95, 26" ElementType="Text" FriendlyName="'Level'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Level' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Level' type='' tag='A' class='dataTable-sorter' check:innerText='Level' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGMAAAAeCAYAAAA4h6CKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGTSURBVGhD7ZfNjYMwEIW3lT3sYctCOVBJDqSTSJQCShdESorw4l9msAF7BcogvU96hxiTKO/LAPlSQAyQIQjIEARkCAIyBAEZgoAMQUDGQQzDYFKCcBlvdb/8qu8fnZvq3ap0tISu60xKhDAZfeO/eK3uT7f4Uc4ng4ooFQIZO5IS4ZMjBDJ2Yk2Ez5YQyBDE/2Q8W1WZffH+V1uH9ap920XDQ13D/qlYut/k0qqXOwYZ5osvy4jKI7l2egcpnRbb3cI+K4kWPY8vHjLGLMggE0F/9eE8V37qfSaJdm3+2jKJjIVBBmNtKmxcYWQK7LSQUo2wtalwaR78PMjgbMvw55FLlS6VTFQkZymRNMhgUBm21GXYpStMii80t2TIGJOWwZ+iZuWMhTNBQUCtKl+oufRY2JSRdU3flEr7PAf+z0gkujnH4dNCH2Xzjk85nwzNmpAtEZpiGQZyg04ed/D3S5eZ+szpSe18l6mUkBwRGiYD7AMVkitCAxkHoSWUiNBAhiAgQxCQIQjIEARkCAIyxKDUH2f44PVZ5np4AAAAAElFTkSuQmCC" SearchSteps="Selector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[CardType]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Brand'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="766, 516, 253, 61" FriendlyName="'AMERICAN EXPRESS'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='4' tableRow='{0}' tag='TD' /&gt;&quot;, Brand)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='TD' /&gt;" Guid="2d02fce0-2243-4007-aafd-2929c29f3a4f" ImageBase64="" InformativeScreenshot="7bae24eb3db9e85e38c083f196ca2403.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="777, 478, 231, 26" ElementType="Text" FriendlyName="'Brand'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Brand' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Brand' type='' tag='A' class='dataTable-sorter' check:innerText='Brand' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOsAAAAeCAYAAADNVel/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHPSURBVHhe7dlBjoIwFIDhucosZuGxjAtP4kJvYsJRMN5CEz1Ex0Krr9BCqzMjb/i/5G2wEBf+oeCHAaACsQJKECugBLECShAroASxAkoQK6AEsQJKECvwBqfTqZkSimM9ms3XwnzaWVXm4o4CU2cjreu6mZJgRazixx+ZTe2WTQaxQh8Zammw2bHaWVZXt3YKiBW6xEL1kxNsPFb54693j2AnFQWxQo+hUP2MBTse62SjIFbMy2isl2rdHrvN47k1XHvwa9x5h637LJidObQnN7rXDc9Zm/3ZLXTk+vYcYsW8ZD6zhqEl1zbRXM1+Ffmsmcd1uvH1RgQYj18MsWIGil4wRe+stxl98SSee/01gljvscnrurvruTLL+7FE7MSKGRh/Zg1i8dtTGVX3ruvF77A+7O422OseT61Lfl/gn8p4wRRuQ9tghkKRIfeHWIHn/HisMq779ljcnYkVeM7r2+Bk2PHny9JYU//zBi+diBUT93v/s6Zme+yv7YQiY4tNcayDb5fdECsUGAp2LFQrO9aSLWjvrvfCNtgLrtnc4Ye/AzBFsWBzQrVErAD+ggw2N1SLWIE3sJGWhGoRK6AEsQJKECugBLECShAroIIx335fveWHMXfVAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[Branding]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Card Type'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_14" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="1018, 516, 138, 61" ElementType="Text" FriendlyName="'DEBIT'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='5' tableRow='{0}' tag='TD' /&gt;&quot;, Debit)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' /&gt;" Guid="9299a798-90b2-46f2-aaf1-9acc08ece8c0" ImageBase64="" InformativeScreenshot="a66bfc333d895cdf1bd8d6abeb7be5c9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1029, 478, 116, 26" ElementType="Text" FriendlyName="'Card Type'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Card Type' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Card Type' type='' tag='A' class='dataTable-sorter' check:innerText='Card Type' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHgAAAAeCAYAAADnydqVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJwSURBVGhD7ZddjsIgEID3KvuwD3ss44Mn8UFvYtKj1HgLTfQQLNNCmYGhpVtsKM6XTGIQ24Fv+PFLCVUjgitHBFeOCK4cEVw5IrhyRHDliODKEcEb4n6/dzGH4gQ/m4P6/vnt4tiaRqET27ZtF3MkxwW352Giceyal+nwHlIEX09hXlzUUiBY7lzJjOCbOjKTZUMErwsn10aKZE+wJ/d0M+0GvapLEEx4NGoXy3fjjMm1MSWZCMYr490iY4jgvCDBePWe1dW0xsAiXBzU5WE6AOgc3zU3ddnbz7Z4vB1j36hrLsH4DuGJd4UM+aIc9Puf+HkQXNH4ffxxF4QTjJOGgZrmGPFzEA127KIWTFIYy1ZwrGBRe9ffKzIu0HP5wu6jxDPfCR6p+CTQRA8rlAimVc4fB3Syl27R7HaPcurb6Dv5XEzu3Bg1w1gSFsbaLBbMrmT7++gz0eR5k5L1DGa+C2Wk5zK2evuYPtrWht+iJxN9DecpG4xgXPGrCda4AoQxufeyK3Wx4PLOYnTJotKoEA92ZaKJKkiwy0FPfmv7YhHxXFxx9P1n51YASLAGi9MRSNbfQ5sbKJooTnpUMC2mYbLILpJJMLfbkH5IsA4+F7OjcW0WPdbc0rP/DwamtqFOlFcIQUwK1kw9Q0ceweGY6HOpYC5wf/bOYSK3YGBM8pRcIBDcEztj3Yqlk0bPtyTBgLdi4Xezt8EEwVSif7+gWzT+Hw7B5sAVp7e954STnCIXiAiuDFQEYaFRwe+StBQsOVUu8BGC/csSZRuCARA7Ry5QsWC8LffBHhMbEvwfPkYwLxcQwcKGEcGVI4KrRqk/1ZqjLjoJItQAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[Cards]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Last Name'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="1161, 364, 143, 61" ElementType="Text" FriendlyName="'Brolan'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='6' tableRow='{0}' tag='TD' /&gt;&quot;, LastName)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' /&gt;" Guid="9cb64def-40ed-47b6-8926-1abdf106f009" ImageBase64="" InformativeScreenshot="448c021df31ede5e729fbe65de966624.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1161, 316, 143, 48" FriendlyName="'Last Name'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='6' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='TH' aaname='' check:innerText='Last Name' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJMAAAA0CAYAAACO/ApDAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALGSURBVHhe7ZpNTuswFIXZCgMGb1lVB11JB2UnSFlKKsZMGDBoJViEX+za8fXNdfpoTvMIOZ90Bjg//vtyjRAPjhAQD+8fJ8cwiITKlH4g5LtIbygTmQRlIjAoE4FBmQgMykRgUCYCgzIRGJSJwKBMBAZlIjAoE4FBmQgMykRgUCYCgzKtlNPpFIKEMq0QL1HbtiFIoQAyvbr90x/36LNt3Gds/e+cG7dJ4+qyb2O74LPZjV7/jUiR0EItT6Yoyab5ig0VlEzW2NYmkyVSCkKoZcnUPveb/22ZjGfWJNOYSClThVqVTI9PO/dyjtc71njM3ZOZZBL3yBxe4/WEdd+zO7ov97LV7ZdUpRIybZrGHKMpkymh6kdJLd+ThVVzGcy17D/k3h/jnZlHpsoGhaRFrt6DkKnc8CSOKZMQRafva+SekO3OnEuufvX5XOa7TOaRyeB4KBfP3NiO40Es7q3HXBBWbuB4nyXiuTS/QqY0vkolkvfGttyvPHbz81fn9kOZVyaz+sQF1V+79a5JMg3bRmXS4wmJ4lTGkT8QW5Kh1JWk8S6MeWQyNyYlL3zeDBH5zqkydciqsD8MZZKCDTNRpjCXf5Dp2kf5Q5lBJrl4eZHtUn9Bb2i/YQCZapXhIpOYS398DY9knEy5j9/ADDKJ6/2mDgXzAhVHjSWDrHDXjoKqTB3yPTGhb/FMlsQQbJJM6mNRYyt+RwSyvL8zGdk0b1fKepbJvi5+n5GCxFQr1JhMHfpIHVYmKxiZxvu5X7UaE2qqSJ4ZZPKLXd7j2/QxZ8tkLKyqKrfKpMdUE9a3Y4+5jBbapzofEJZQCJE8AJnI0pBCoUTyUKaV4iVCiuShTAQGZSIwKBOBQZkIDMpEYFAmAoMyERiUicCgTAQGZSIwKBOBQZkIDMpEYFAmAoMyERiFTPq//hjm1lAmBhYec2QS2Rvn/gLpJQd/aJ/EIAAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[Name]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'City/State'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="1303, 364, 174, 61" ElementType="Text" FriendlyName="'Atlanta;GA'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='7' tableRow='{0}' tag='TD' /&gt;&quot;, State)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' /&gt;" Guid="8e504ca1-535e-45af-87a6-70d9136a617d" ImageBase64="" InformativeScreenshot="5dc89d3a5a311dc71c5ab458292815c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1314, 326, 153, 26" ElementType="Text" FriendlyName="'City/State'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='City/State' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='City/State' type='' tag='A' class='dataTable-sorter' check:innerText='City/State' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJ0AAAAeCAYAAAA2AhygAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALgSURBVHhe7ZhNUsMwDEa5CgsWHIthwUlYlJvA9ChheosyA4cwVuLEn2zJzk8xnUZvRos6sa3Uz4rbO2cYjTHpjOaYdEZzTDqjOSad0RyTzmiOSWc0x6QzNnE+n/tYwmrpPg+P7v7Bx/PRfYc2Y1+QbF3X9bFEvIJ0J/dKUqXRS4bXXtz7V+hyab6O7inM89qFNi2vhzf3Ge4w/h4Ubql4onRTFZMiVDa90gUpDqfweT3ZHN0bz4UFl+77+OLb1m+Irf1vGUm4MeaIl0nHhUurhxeq9DqFyrRduljRno4/7DNFrHzEj3t/jrnGZ1gnzdb+t0xJuDFq4nHpsJKU5NK4pHRTLkEmHLuSm0l33TDpsMrxSpJClWW8d5AC+7I4fECFSionSD5UsxEYf5QXpfMh5pfcEyPIo1yf5q71D2TPeoGjxJ4A6VCk2g5fIt1JlTm2JzLC4sv3x2Dy1aQpnAl78arSaT9ifKx5M+wUkA6/0ESCjFy6Hlw03P1iO8yXVIpJrmwhcV4MrRIt2Dwwl9Zf3CTKBjF02kgn3T9VnVSMmAd/5SJSxYl5VKUTK16tvzQnDz1fA1Fer7Vdu1Q6Dyw0jT0tbFLNhr8q6BqMq8JFGBddky6OLcV26bJnNkTYDwm2KMUzygrpWAU7Tf15dYBxZy4g5lyWDqWRBFsgnZ3fNsGky3Zz9uX6633bDOmEhckrDfQl1Feuh8aW8oHxxuocpYGKDblF0Wsi8oqP7dlmOexDxMv/T0egOFKUpEulpcCKlY6dVLNpUQVh5+U1kMtNEgu5sYjPIff3F0o5SDnfKCXxasIRuXSB/IsfYtjhmnSeuWL5YOdG6MfaJ3BOHtL9OI8mDfWL9/HnEPv3yHnIOd8uknhzhCNU6f4GWLCkMkTJE4mNqwXFmysc0VY6+AXLz0Tx1cfbjWuHZFsiHNFEOv6q8rGj84+R0146E273ND7TGYZJZ/wDJp3RHJPOaIxzv3VzmCUjp0DWAAAAAElFTkSuQmCC" SearchSteps="Selector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[City]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Zip'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_15" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="1481, 516, 76, 61" ElementType="Text" FriendlyName="'78754'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='8' tableRow='{0}' tag='TD' /&gt;&quot;, Zip)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' /&gt;" Guid="1d4adad7-1eb0-4982-a398-717df1cb17aa" ImageBase64="" InformativeScreenshot="13df328f46c86b12e0c3ea66a3d08d2e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1492, 478, 55, 26" ElementType="Text" FriendlyName="'Zip'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Zip' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Zip' type='' tag='A' class='dataTable-sorter' check:innerText='Zip' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAeCAYAAACSRGY2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEzSURBVFhH7ZZBDoIwEEW9igsXHsu48CQs4CYkHKXEW0CihxgdMkgLQ6clSKX2JX/BJBAe/RQO8Eck2VhJsrGSZGMlye6Bpmm6+LBMVhVwPJ3fuUHZ0mxDUFIp1cVHeJD9CNiTKYA6H44v1ZMusA26qK/wItlQK8uJ9nERFmusr+Ixv9N0e2yifSRhu6yx2gXUNN4rFtk7ZB9Rqi/xqG6T+XhmNCLQRjZmVtZWX0mWT3hhXlaoryw7nGPMA77zCCM7X98eSdY8R7vetYIHTUMwkXXZfeOQddx9vWTbCi40/6Eay/XtkWT1FVzrb2vV76z5qZgPyomyXFaosE1YEkVI9gnllblBJi6ymTJbsua7ygm7iCKTDWop3AP4FrqwqyiyS1kEJX1Ekd3KLiHJxkqSjROAFwb3xLZdKu8SAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[Pincode]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Country'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="1554, 364, 121, 61" ElementType="Text" FriendlyName="'US'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='9' tableRow='{0}' tag='TD' /&gt;&quot;, Country)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' /&gt;" Guid="057a90ff-9b4d-4e52-8548-0c63b60918a2" ImageBase64="" InformativeScreenshot="01d20fce246726c3fb9822c5f98bbc03.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1564, 326, 100, 26" ElementType="Text" FriendlyName="'Country'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Country' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Country' type='' tag='A' class='dataTable-sorter' check:innerText='Country' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAeCAYAAADAZ1t9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIZSURBVGhD7ZfNjcIwEEa3lT3sgbIQByrhAJ0gpZREdBEkKMIbGzv+xhkndoiyw8ZPmgPG+O+NJ+FLFURTBAmnCBJOESScIkg4RZBwiiDhFEEr0ratiRyKoJXQYuq6NpEjaUTQTZ1+duo7jEOlHrZHIQ2UkyuJFdScGTEuRAmySXS+2c/y4OS4SJE0EETlXFRj2190ByJF0L1Se7dOoYLG5LiYkkQF1RcvR3op+wBBS0AE4e051bZxFO45Fdy62EEy7Y/q2I+j56e3+aiud9MtXoLNOLCmLskaN6ZOOEzAQKof088jARD0VNdDxiJxs0z0gmcKYsPe6mRBGOa3+B0mErQH4v4aEBRbPAf2RZnMGHMF9SU2MldsXNJ/p/bV07a/CG+pAZItrXKsxzxBsKHJA5gpCA+KbU8SxOyD+V1/I/ukkEOkxE1k0qcIihy4L5FaoO8f7kUC5CUBD2I0m5YQhM+wlQX5ubuSWbtxZL0cOIigsH4PN9h9b9qwH5YRrp3vSx707woi64T5oklGq4UJInkZlv8fpMGNc+E2jTeACTzg6FuXizmCiHgbZpwUQXRMHTjfkoxJmpKjGQqyhBtwQUsac0jcgznMWH1wTInKE9QRJlOGILp2bs3LwUlKkaOJCvr3gNw1Xg5QUqoczWYF+bK73suBFpMjR7MxQcOSLPHVGtm0IOlyNNt9Bn0IRZBwiiDhFEGiUeoXQN4WngMnJ44AAAAASUVORK5CYII=" SearchSteps="Selector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[CountryText]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Price'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_16" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="1677, 516, 90, 61" ElementType="Text" FriendlyName="'$19.99'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='10' tableRow='{0}' tag='TD' /&gt;&quot;, Price)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' /&gt;" Guid="85e1440b-e8e3-4dcb-b59b-badc9a3b450c" ImageBase64="" InformativeScreenshot="159404fbdb33ba8cb69eb6d389b39cee.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1688, 478, 69, 26" ElementType="Text" FriendlyName="'Price'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Price' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Price' type='' tag='A' class='dataTable-sorter' check:innerText='Price' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAAeCAYAAABg+DOTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGFSURBVGhD7ZZRjsIgEIb3KvuwDx7L+OBJ+qA3MeEoNN6iJvUQLFCoA53CoGvL2vmSP1EopHwZoF+KycKSCLAkAiyJAEsiwJIIsCQCLInA5iR1XWdTwhsk3dXlsFPfPzqnq2urAyNHSmlTIiqQ1IvjsDgs1AXfhNqP486qdc1rAwWViqJLsqEsur5KwgT5UETNSmqka4SL1tmLu2v/H6QE+eREESRp5Hlsr+2cWYInJV1V4/8fhGr9OP27j/r6YQYH6EOfmfYH77ESxdttaEcWa5KSBEXD+Gfm+nXW3uJlB/e41UJJ4SIQScGNd1SXm33Q0opILNjOj/dZ95YkSwrLHkqKFzCVBOdFqyJRRUNCsUtDO5MmINUykpaEzpuVlHuf91KdpBo/MRaRNH8m6UvhZJ4BY+Ktpcc2L4hb7jtpQqEkDZw7CFJtcV6trpSonCDDYpIsQUW5wI9TrP+PbjZMFEWQIZD06UBRVEGGTUkyGDklggybk/QMLIkASyLAkgiwpCxK/QIgitZorUbY2wAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[Cost]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <uix:NGetText DisplayName="Get Text 'Buy?'" sap:VirtualizedContainerService.HintSize="430.4,157.6" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="fafe54a6-bda8-44a5-b970-c5f7471cdcb6" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclub_ccdumps_349473.html" DesignTimeRectangle="1766, 364, 90, 61" FriendlyName="'Buy'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='11' tableRow='{0}' tag='TD' /&gt;&quot;, Buy)]" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='' tag='TD' aaname='' /&gt;" Guid="da175a7e-5ce9-4a60-b265-def3c9184417" ImageBase64="" InformativeScreenshot="f158f97c87e0b6037b4b93148338e511.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Credit Card Dumps' /&gt;" SearchSteps="Selector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="1777, 326, 69, 26" ElementType="Text" FriendlyName="'Buy?'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Buy?' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='Buy?' type='' tag='A' class='dataTable-sorter' check:innerText='Buy?' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAAeCAYAAABg+DOTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGpSURBVGhD7ZdBsoIwDED/VVz8hcdyXHgSF3oTZzhKHW+BM3qISLClCbQ01RZw6JvJwlgoPJKIf1AIUiQJKJIEFEkCiiQBRZKAIknA6iTVdd1GDKuShHKUUm3EiGKSrqctbP49cbrpVTm4wXGw5xmu+tsUUEGxouSSMPYVPPTalDyqg3u/RKJcgkxIRHkkHeBy10n2lGk+HSjpqPSHBiqN5j9hTJCJkCiBJH8+G+qs99vCrnrq5HyEJd0r2OkLtnOJVBdrwV6e3Gx/po2Jn/yhBBDPJF72QkmsVel8IXmvvGVUERI3uGMrqck45wupMN8sWoogRDCTnnDZm7y5eLkkV7t2+7Bj7T5LEoSIBjd98u8bjZDUYM+LLWfXcBlrkUSrhua745vzKrNmGUNZwoftRnN2LXsp9LRSF72Bjbjb8Dsyvif5wv5CMSGu6N1of/3wJZFUZ+IqGxMVEoTIJY09+Tb4vBlWA5Xg/ruRo5IMLlESQQiTlBUyr+YazFSUVBAymSRbdfMObJQTIwjJLIm22LxV9A2TSvpFQch0M+mHKZIEFEkCiqQgAC+q5rGGg2ApJAAAAABJRU5ErkJggg==" SearchSteps="Selector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[Buyer]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{CardNumber,Expiration,Level,Brand,CardType,LastName,City,Zip,CountryText,Price,Buyer}]" DataTable="[ExtractedData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="430.4,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="430.4,413.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                    <ui:MultipleAssign.AssignOperations>
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[CardNumber]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[CardNumber+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Valid]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Valid+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Level]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Level+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Brand]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Brand+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Debit]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Debit+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[LastName]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[LastName+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[State]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[State+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Zip]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Zip+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_20">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Country]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Country+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Price]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Price+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:Int32">[Buy]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:Int32">[Buy+1]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                      </scg:List>
+                    </ui:MultipleAssign.AssignOperations>
+                  </ui:MultipleAssign>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="CardNumber&lt;52" />
+              </ui:InterruptibleWhile.Condition>
+            </ui:InterruptibleWhile>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="510.4,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[ExtractedData.Rows.Count]" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,380.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="475.2,302.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ForEach x:TypeArguments="sd:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="433.6,209.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ExtractedData]">
+                    <ui:ForEach.Body>
+                      <ActivityAction x:TypeArguments="sd:DataTable">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="sd:DataTable" Name="item" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="200,84.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:ForEach.Body>
+                  </ui:ForEach>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,333.6" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="475.2,255.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FilterDataTable DataTable="[extractdatatable]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="433.6,162.4" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[filtereddt]" SelectColumnsMode="Keep">
+                    <ui:FilterDataTable.Filters>
+                      <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="8">
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Level"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["CLASSIC or PLATINUM"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Level"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["PLATINUM"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Brand"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["AMERICAN EXPRESS"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Brand"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["VISA"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                        <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                          <ui:FilterOperationArgument.Column>
+                            <InArgument x:TypeArguments="x:String">["Card Type"]</InArgument>
+                          </ui:FilterOperationArgument.Column>
+                          <ui:FilterOperationArgument.Operand>
+                            <InArgument x:TypeArguments="x:String">["DEBIT"]</InArgument>
+                          </ui:FilterOperationArgument.Operand>
+                        </ui:FilterOperationArgument>
+                      </scg:List>
+                    </ui:FilterDataTable.Filters>
+                    <ui:FilterDataTable.SelectColumns>
+                      <scg:List x:TypeArguments="InArgument" Capacity="4">
+                        <x:Null />
+                      </scg:List>
+                    </ui:FilterDataTable.SelectColumns>
+                  </ui:FilterDataTable>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <ui:WriteCsvFile AddHeaders="True" DataTable="[ExtractedData]" Delimitator="Comma" DisplayName="Write CSV" FilePath="C:\Users\dkseelaboina\Downloads\DileepS.csv" sap:VirtualizedContainerService.HintSize="510.4,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" ShouldQuote="True" />
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510.4,284.8" sap2010:WorkflowViewState.IdRef="CommentOut_7">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,206.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Raylogindetails.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <OutArgument x:TypeArguments="x:Int32" x:Key="smtpport" />
+                      <OutArgument x:TypeArguments="x:String" x:Key="smtpserver" />
+                      <OutArgument x:TypeArguments="x:String" x:Key="UsernameOutlook" />
+                      <OutArgument x:TypeArguments="ss:SecureString" x:Key="PasswordOutlook" />
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="ded9d9af3200d348328000cefc0779f6.png" Selector="&lt;html app='chrome.exe' title='Ryan&amp;apos;s Club - Login' /&gt;" Url="https://developer.automationanywhere.com/challenges/automationanywherelabs-ryansclublogin.html" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
